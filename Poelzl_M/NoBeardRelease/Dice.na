@@ -1,0 +1,67 @@
+"1.Nummer:2.Nummer:Ergebnis:"
+inc 12
+
+lit 0                 #1.Nummer:
+lit 9
+lit 9
+out 2
+
+
+la 0 32             #Einlesen 1. Nummer
+la 0 36
+in 0
+out 3
+
+lit 9                       #2.Nummer:
+lit 9
+lit 9
+out 2
+
+
+la 0 36                   #Einlesen 2.Nummer
+la 0 40
+in 0
+out 3
+
+lv 0 32
+lv 0 36
+rel 2
+tjmp .true
+lv 0 32
+lv 0 36
+rel 2
+fjmp .false
+
+
+
+.true
+la 0 40
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+
+jmp .ergebnis
+
+.false
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+jmp .ergebnis
+
+
+.ergebnis
+
+lit 18
+lit 9
+lit 9
+out 2
+
+lv 0 40
+out 0
+
+halt
